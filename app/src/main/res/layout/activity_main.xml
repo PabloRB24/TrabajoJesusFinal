@@ -74,6 +74,7 @@
         android:backgroundTint="@color/azul"
         android:text="CONTINUAR"
         android:textSize="17sp"
+        app:cornerRadius = "5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.542"
         app:layout_constraintStart_toStartOf="parent"
