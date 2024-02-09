@@ -61,31 +61,166 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ScrollView
-        android:layout_width="334dp"
-        android:layout_height="234dp"
+    <HorizontalScrollView
+        android:id="@+id/carruselSeries1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="68dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.61"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imageSelector"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background"
-                tools:layout_editor_absoluteX="47dp"
-                tools:layout_editor_absoluteY="329dp" />
+                android:id="@+id/imageSelectorS"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="20dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/the_bear_serie" />
+
+            <ImageView
+                android:id="@+id/imageSelectorS2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="20dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/asesinato_en_el_fin_del_mundo" />
+
+            <ImageView
+                android:id="@+id/imageSelectorS3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="20dp"
+                android:clickable="true"
+                android:src="@drawable/desaparecidos_serie" />
+
+            <ImageView
+                android:id="@+id/imageSelectorS4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="20dp"
+                android:clickable="true"
+                android:src="@drawable/el_colapso_serie" />
+            <ImageView
+                android:id="@+id/imageSelectorS5"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/el_encargado_serie" />
+
+            <ImageView
+                android:id="@+id/imageSelectorS6"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="20dp"
+                android:clickable="true"
+                android:src="@drawable/el_maestro_de_la_evasion_serie" />
+
+            <ImageView
+                android:id="@+id/imageSelectorS7"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="20dp"
+                android:clickable="true"
+                android:src="@drawable/el_paciente_serie" />
+
+            <ImageView
+                android:id="@+id/imageSelectorS8"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="20dp"
+                android:clickable="true"
+                android:src="@drawable/the_forsters_serie" />
 
         </LinearLayout>
-    </ScrollView>
+    </HorizontalScrollView>
 
+    <HorizontalScrollView
+        android:id="@+id/carruselPeliculas1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.61"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/imageSelectorP"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_launcher_background" />
+
+            <ImageButton
+                android:id="@+id/imageSelectorP2"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_launcher_background" />
+
+            <ImageButton
+                android:id="@+id/imageSelectorP3"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_launcher_background" />
+
+            <ImageButton
+                android:id="@+id/imageSelectorP4"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_launcher_background" />
+
+            <ImageButton
+                android:id="@+id/imageSelectorP5"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_launcher_background" />
+
+            <ImageButton
+                android:id="@+id/imageSelectorP6"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_launcher_background" />
+
+            <ImageButton
+                android:id="@+id/imageSelectorP7"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_launcher_background" />
+
+            <ImageButton
+                android:id="@+id/imageSelectorP8"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/ic_launcher_background" />
+
+
+        </LinearLayout>
+    </HorizontalScrollView>
 
 
 
