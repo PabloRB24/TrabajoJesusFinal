@@ -2,19 +2,13 @@ package com.example.trabajojesusfinal
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.content.Context
 import android.content.Intent
 import android.util.Log
-import android.view.View
-import android.widget.AdapterView
-import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.ImageView
 
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.ContextCompat
 
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
@@ -111,7 +105,7 @@ class CrearCuenta : AppCompatActivity() {
                     contra.text.toString()
                 ).addOnCompleteListener {
                     if (it.isSuccessful) {
-                        datosUsuario(correo.text.toString(),nombre.text.toString())
+                        datosUsuario(correo.text.toString(),nombre.text.toString(), imagen.id.toString(), contra.text.toString())
                         val registrado = Intent(this, MainActivity::class.java)
                         startActivity(registrado)
                     } else {
@@ -135,11 +129,11 @@ class CrearCuenta : AppCompatActivity() {
         dialog.show()
     }
 
-    private fun datosUsuario (correo : String, nombre : String){
+    private fun datosUsuario (correo: String, nombre: String, foto: String, contra: String){
         val usuarioActual : FirebaseUser? = auth.currentUser
         if (usuarioActual !=null) {
             // insertamos los datos del usuario actual en nuestra Base de Datos
-            val user = Usuario (correo, nombre)
+            val user = Usuario (correo, nombre, foto, contra)
             usuariosRef.child(usuarioActual.uid).setValue(user)
         } else {
 

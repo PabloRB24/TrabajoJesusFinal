@@ -9,6 +9,7 @@ import android.widget.TextView
 import android.content.ContentValues
 import android.util.Log
 import android.widget.EditText
+import android.widget.ImageView
 import androidx.appcompat.app.AlertDialog
 import com.google.firebase.Firebase
 import com.google.firebase.analytics.FirebaseAnalytics
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var email : EditText
     private lateinit var pass : EditText
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
