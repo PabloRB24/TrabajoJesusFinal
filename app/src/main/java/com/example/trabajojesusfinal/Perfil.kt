@@ -61,7 +61,8 @@ class Perfil : AppCompatActivity() {
             correo.text = "$correoUsuario"
         }
         obtenerFoto { fotoUsuario->
-        //    foto.setImageResource(fotoUsuario.toInt())
+            var ruta = resources.getIdentifier(fotoUsuario,"drawable",packageName)
+            foto.setImageResource(ruta)
         }
 
     }

@@ -105,7 +105,8 @@ class CrearCuenta : AppCompatActivity() {
                     contra.text.toString()
                 ).addOnCompleteListener {
                     if (it.isSuccessful) {
-                        datosUsuario(correo.text.toString(),nombre.text.toString(), imagen.id.toString(), contra.text.toString())
+                        val imageViewName = resources.getResourceEntryName(imagen.id)
+                        datosUsuario(correo.text.toString(),nombre.text.toString(), imageViewName, contra.text.toString())
                         val registrado = Intent(this, MainActivity::class.java)
                         startActivity(registrado)
                     } else {
