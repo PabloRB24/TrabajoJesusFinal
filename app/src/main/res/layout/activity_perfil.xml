@@ -37,45 +37,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
+    <TextView
         android:id="@+id/editTextTextEmailAddress"
         android:layout_width="376dp"
         android:layout_height="60dp"
-        android:layout_marginTop="116dp"
+        android:layout_marginTop="68dp"
         android:background="#e9ebf0"
         android:ems="10"
-        android:hint="Correo electronico"
-        android:inputType="textEmailAddress"
-        android:textColorHint="#7f8186"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.457"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imagen" />
-
-    <EditText
-        android:id="@+id/editTextTextPassword"
-        android:layout_width="376dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="24dp"
-        android:background="#e9ebf0"
-        android:ems="10"
-        android:hint="Contraseña"
-        android:inputType="textPassword"
+        android:gravity="center"
         android:textColorHint="#7f8186"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.485"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagen" />
+
+    <TextView
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="376dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="68dp"
+        android:background="#e9ebf0"
+        android:ems="10"
+        android:gravity="center"
+        android:textColorHint="#7f8186"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextText" />
 
-    <EditText
+    <TextView
         android:id="@+id/editTextText"
         android:layout_width="376dp"
         android:layout_height="60dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="68dp"
         android:background="#e9ebf0"
-        android:ems="10"
-        android:hint="Nombre de usuario"
-        android:inputType="text"
+        android:ems="20"
+        android:gravity="center"
         android:textColorHint="#7f8186"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.457"
@@ -97,6 +94,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="109dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="16dp"
+        android:text="Correo:"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="109dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="16dp"
+        android:text="Nombre:"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editTextText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="160dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="16dp"
+        android:text="Contraseña:"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
