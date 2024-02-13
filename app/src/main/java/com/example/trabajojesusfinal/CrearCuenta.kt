@@ -45,6 +45,7 @@ class CrearCuenta : AppCompatActivity() {
         continua = findViewById(R.id.continuarInicio)
         derecha = findViewById(R.id.imageView3)
         izquierda = findViewById(R.id.imageView2)
+        var nombreImg = ""
 
         derecha.setOnClickListener{
             if (cont >= 4){
@@ -57,15 +58,19 @@ class CrearCuenta : AppCompatActivity() {
 
                 1->{
                     imagen.setImageResource(R.drawable.among_us_amarillo)
+                    nombreImg = "among_us_amarillo"
                 }
                 2->{
                     imagen.setImageResource(R.drawable.among_us_rojo)
+                    nombreImg = "among_us_rojo"
                 }
                 3->{
                     imagen.setImageResource(R.drawable.among_us_azul)
+                    nombreImg = "among_us_azul"
                 }
                 4->{
                     imagen.setImageResource(R.drawable.among_us_verde)
+                    nombreImg = "among_us_verde"
                 }
             }
         }
@@ -81,15 +86,19 @@ class CrearCuenta : AppCompatActivity() {
 
                 1->{
                     imagen.setImageResource(R.drawable.among_us_amarillo)
+                    nombreImg = "among_us_amarillo"
                 }
                 2->{
                     imagen.setImageResource(R.drawable.among_us_rojo)
+                    nombreImg = "among_us_rojo"
                 }
                 3->{
                     imagen.setImageResource(R.drawable.among_us_azul)
+                    nombreImg = "among_us_azul"
                 }
                 4->{
                     imagen.setImageResource(R.drawable.among_us_verde)
+                    nombreImg = "among_us_verde"
                 }
             }
         }
@@ -105,8 +114,7 @@ class CrearCuenta : AppCompatActivity() {
                     contra.text.toString()
                 ).addOnCompleteListener {
                     if (it.isSuccessful) {
-                        val imageViewName = resources.getResourceEntryName(imagen.id)
-                        datosUsuario(correo.text.toString(),nombre.text.toString(), imageViewName, contra.text.toString())
+                        datosUsuario(correo.text.toString(),nombre.text.toString(), nombreImg, contra.text.toString())
                         val registrado = Intent(this, MainActivity::class.java)
                         startActivity(registrado)
                     } else {
