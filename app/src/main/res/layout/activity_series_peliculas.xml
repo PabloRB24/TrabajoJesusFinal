@@ -19,46 +19,41 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="256dp"
-        android:layout_marginEnd="60dp"
-        app:cornerRadius = "5dp"
-        android:text="Series"
-        android:backgroundTint="@color/azul"
+    <ImageView
+        android:id="@+id/series"
+        android:layout_width="72dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="208dp"
+        android:background="#FF3A92D8"
+        android:clickable="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/play2"/>
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="140dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="256dp"
-        android:layout_marginEnd="40dp"
-        app:cornerRadius = "5dp"
-        android:text="Peliculas"
-        android:backgroundTint="@color/azul"
+    <ImageView
+        android:id="@+id/peliculas"
+        android:layout_width="72dp"
+        android:layout_height="76dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="112dp"
+        android:background="#FF3A92D8"
+        android:clickable="true"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/claquetazo" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="304dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="94dp"
+        android:layout_height="69dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:gravity="center"
         android:text="INICIO"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/imagePerfil"
-        app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,7 +68,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.61"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button">
+        app:layout_constraintTop_toBottomOf="@+id/series">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -156,7 +151,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.61"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button">
+        app:layout_constraintTop_toBottomOf="@+id/series">
 
         <LinearLayout
             android:layout_width="wrap_content"

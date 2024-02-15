@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import android.widget.HorizontalScrollView
 import android.widget.ImageView
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
@@ -21,12 +23,24 @@ class SeriesPeliculas : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private lateinit var database : FirebaseDatabase
     private lateinit var usuariosRef : DatabaseReference
+    private lateinit var series : ImageView
+    private lateinit var peliculas : ImageView
+    private lateinit var carrPeliculas : HorizontalScrollView
+    private lateinit var carrSeries : HorizontalScrollView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_series_peliculas)
 
+        series = findViewById(R.id.series)
+        peliculas = findViewById(R.id.peliculas)
         perfil = findViewById(R.id.imagePerfil)
+        carrPeliculas = findViewById(R.id.carruselPeliculas1)
+        carrSeries = findViewById(R.id.carruselSeries1)
+        carrSeries.visibility = View.INVISIBLE
+        carrPeliculas.visibility = View.INVISIBLE
+
+
         auth = Firebase.auth
         database = FirebaseDatabase.getInstance()
         usuariosRef = database.getReference("usuarios")
@@ -41,7 +55,15 @@ class SeriesPeliculas : AppCompatActivity() {
             startActivity(intent)
         }
 
+        series.setOnClickListener {
+            carrSeries.visibility = View.VISIBLE
+            carrPeliculas.visibility = View.INVISIBLE
+        }
 
+        peliculas.setOnClickListener {
+            carrSeries.visibility = View.INVISIBLE
+            carrPeliculas.visibility = View.VISIBLE
+        }
 
 
     }
