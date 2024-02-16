@@ -3,8 +3,7 @@
     <string name="inicia_sesion">Inicia sesión con tu correo electronico</string>
 
     <string-array name="generos">
-        <item name="Romance">Humano</item>
-        <item name="Drama">Elfo</item>
-        <item name="Comedia">Enano</item>
+        <item name="Romance">Romance</item>
+        <item name="Drama">Drama</item>
     </string-array>
 </resources>

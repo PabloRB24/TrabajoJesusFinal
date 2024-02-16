@@ -42,7 +42,7 @@ class SeriesPeliculas : AppCompatActivity() {
         carrSeries = findViewById(R.id.carruselSeries1)
 
 
-        carrSeries.visibility = View.INVISIBLE
+        carrSeries.visibility = View.VISIBLE
         carrPeliculas.visibility = View.INVISIBLE
 
 
