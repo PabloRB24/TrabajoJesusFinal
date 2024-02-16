@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">TrabajoJesusFinal</string>
     <string name="inicia_sesion">Inicia sesión con tu correo electronico</string>
+
+    <string-array name="generos">
+        <item name="Romance">Humano</item>
+        <item name="Drama">Elfo</item>
+        <item name="Comedia">Enano</item>
+    </string-array>
 </resources>

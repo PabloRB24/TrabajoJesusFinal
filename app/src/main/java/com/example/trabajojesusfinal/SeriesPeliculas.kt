@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import android.widget.HorizontalScrollView
 import android.widget.ImageView
+import android.widget.TextView
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -27,18 +28,23 @@ class SeriesPeliculas : AppCompatActivity() {
     private lateinit var peliculas : ImageView
     private lateinit var carrPeliculas : HorizontalScrollView
     private lateinit var carrSeries : HorizontalScrollView
+    private lateinit var abandonar : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_series_peliculas)
 
+        abandonar = findViewById(R.id.textView4)
         series = findViewById(R.id.series)
         peliculas = findViewById(R.id.peliculas)
         perfil = findViewById(R.id.imagePerfil)
         carrPeliculas = findViewById(R.id.carruselPeliculas1)
         carrSeries = findViewById(R.id.carruselSeries1)
+
+
         carrSeries.visibility = View.INVISIBLE
         carrPeliculas.visibility = View.INVISIBLE
+
 
 
         auth = Firebase.auth
@@ -65,6 +71,10 @@ class SeriesPeliculas : AppCompatActivity() {
             carrPeliculas.visibility = View.VISIBLE
         }
 
+        abandonar.setOnClickListener {
+            var intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 

@@ -30,6 +30,7 @@ class Perfil : AppCompatActivity() {
     private lateinit var correo : TextView
     private lateinit var contra : TextView
     private lateinit var foto : ImageView
+    private lateinit var mostrarContra : Button
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,11 +42,18 @@ class Perfil : AppCompatActivity() {
         correo = findViewById(R.id.editTextTextEmailAddress)
         contra = findViewById(R.id.editTextTextPassword)
         foto = findViewById(R.id.imagen)
+        mostrarContra = findViewById(R.id.mostrarContra)
+
+        var contraseña : String = ""
 
         atras.setOnClickListener {
             intent = Intent(this, SeriesPeliculas::class.java)
             startActivity(intent)
         }
+        mostrarContra.setOnClickListener {
+            contra.text = contraseña
+        }
+
 
         auth = Firebase.auth
         database = FirebaseDatabase.getInstance()
@@ -55,10 +63,16 @@ class Perfil : AppCompatActivity() {
             nombre.text = "$nombreUsuario"
         }
         obtenerContra {contraUsuario ->
-            contra.text = "$contraUsuario"
+            contraseña = "$contraUsuario"
+            var c : Int = 0
+            var con: String = ""
+            contraseña.forEach {
+                con += "X"
+            }
+                contra.text = con
         }
         obtenerCorreo {correoUsuario ->
-            correo.text = "$correoUsuario"
+            correo.text = contraseña
         }
         obtenerFoto { fotoUsuario->
             var ruta = resources.getIdentifier(fotoUsuario,"drawable",packageName)
