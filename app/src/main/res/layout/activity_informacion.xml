@@ -33,53 +33,39 @@
         android:layout_marginEnd="20dp"
         android:src="@drawable/ic_launcher_background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.258"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <ImageView
         android:id="@+id/video"
         android:layout_width="67dp"
         android:layout_height="61dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="204dp"
+        android:layout_marginTop="128dp"
         android:layout_marginEnd="20dp"
         android:src="@drawable/ic_launcher_background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.859"
+        app:layout_constraintHorizontal_bias="0.862"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="283dp"
-        android:layout_height="220dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+    <TextView
+        android:id="@+id/editTextCV"
+        android:layout_width="327dp"
+        android:layout_height="221dp"
         android:layout_marginBottom="132dp"
-        android:layout_span="2"
+        android:autofillHints=""
+        android:background="@null"
+        android:gravity="top|start"
+        android:lines="10"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
-        app:layout_constraintStart_toStartOf="parent">
-
-        <EditText
-            android:id="@+id/editTextCV"
-            android:layout_width="match_parent"
-            android:layout_height="196dp"
-            android:layout_marginBottom="132dp"
-            android:autofillHints=""
-            android:background="@null"
-            android:gravity="top|start"
-            android:lines="10"
-            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-            android:textColor="@color/white"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:ignore="SpeakableTextPresentCheck" />
-
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintHorizontal_bias="0.19"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/atras"
@@ -97,13 +83,28 @@
 
     <TextView
         android:id="@+id/textView8"
-        android:layout_width="152dp"
-        android:layout_height="40dp"
+        android:layout_width="313dp"
+        android:layout_height="42dp"
         android:layout_marginTop="12dp"
-        android:text="TextView"
+        android:gravity="center"
+        android:text="Titulo"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.154"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imagenPeli" />
 
+    <TextView
+        android:id="@+id/trailer"
+        android:layout_width="115dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="8dp"
+        android:text="Trailer"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/video" />
 </androidx.constraintlayout.widget.ConstraintLayout>
