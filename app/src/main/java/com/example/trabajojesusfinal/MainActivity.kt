@@ -14,6 +14,8 @@ import androidx.appcompat.app.AlertDialog
 import com.google.firebase.Firebase
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthEmailException
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 import com.google.firebase.auth.auth
 
 class MainActivity : AppCompatActivity() {
@@ -76,7 +78,12 @@ class MainActivity : AppCompatActivity() {
                         logged.putExtra("email",email.text.toString())
                         startActivity(logged)
                     } else {
-                        showAlert("Verifica que los campos introducidos son correctos.")
+                        if (it.exception is FirebaseAuthEmailException){
+                            showAlert("Correo correcto.")
+                        }
+                        if (it.exception is FirebaseAuthInvalidCredentialsException){
+                            showAlert("Contraseña incorrecta.")
+                        }
                     }
                 }
             }else{
