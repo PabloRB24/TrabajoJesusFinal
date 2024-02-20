@@ -132,7 +132,7 @@ class Perfil : AppCompatActivity() {
                         // Devolvemos el correo de usuario
                         callback(correoUsuario)
                     } else {
-                        Log.d("Firebase", "El nombre no está configurado en la base de datos")
+                        Log.d("Firebase", "El correo no está configurado en la base de datos")
                         // Si fuera nulo o estuviera en blanco devolvemos el siguiente mensaje
                         callback("Desconocido")
                     }
@@ -141,7 +141,7 @@ class Perfil : AppCompatActivity() {
                 // Por si hubiera un error, estamos obligados hacer esta función al hacer addListenerForSingleValueEvent
                 override fun onCancelled(databaseError: DatabaseError) {
 
-                    Log.e("Firebase", "Error al leer el nombre desde la base de datos: ${databaseError.message}")
+                    Log.e("Firebase", "Error al leer el correo desde la base de datos: ${databaseError.message}")
                     callback("Error al leer el correo")
                 }
             })
@@ -156,17 +156,17 @@ class Perfil : AppCompatActivity() {
 
         if (usuarioActual != null) {
             val uidUsuario = usuarioActual.uid
-            // Leemos a través del dataSnapshot el nombre del usuario actual
+            // Leemos a través del dataSnapshot el contraseña del usuario actual
             usuariosRef.child(uidUsuario).child("contra").addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    // Guardamos el nombre en nombreUsuario tanto si existe o no
+                    // Guardamos el nombre en contraUsuario tanto si existe o no
                     val contraUsuario = dataSnapshot.value as String?
 
                     if (contraUsuario != null && contraUsuario.isNotEmpty()) {
                         // Devolvemos el nombre de usuario
                         callback(contraUsuario)
                     } else {
-                        Log.d("Firebase", "El nombre no está configurado en la base de datos")
+                        Log.d("Firebase", "La contraseña no está configurada en la base de datos")
                         // Si fuera nulo o estuviera en blanco devolvemos el siguiente mensaje
                         callback("Desconocido")
                     }
@@ -175,7 +175,7 @@ class Perfil : AppCompatActivity() {
                 // Por si hubiera un error, estamos obligados hacer esta función al hacer addListenerForSingleValueEvent
                 override fun onCancelled(databaseError: DatabaseError) {
 
-                    Log.e("Firebase", "Error al leer el nombre desde la base de datos: ${databaseError.message}")
+                    Log.e("Firebase", "Error al leer el contraseña desde la base de datos: ${databaseError.message}")
                     callback("Error al leer el nombre")
                 }
             })
@@ -190,17 +190,17 @@ class Perfil : AppCompatActivity() {
 
         if (usuarioActual != null) {
             val uidUsuario = usuarioActual.uid
-            // Leemos a través del dataSnapshot el nombre del usuario actual
+            // Leemos a través del dataSnapshot el foto del usuario actual
             usuariosRef.child(uidUsuario).child("foto").addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    // Guardamos el nombre en nombreUsuario tanto si existe o no
+                    // Guardamos la foto en fotoUsuario tanto si existe o no
                     val fotoUsuario = dataSnapshot.value as String?
 
                     if (fotoUsuario != null && fotoUsuario.isNotEmpty()) {
-                        // Devolvemos el nombre de usuario
+                        // Devolvemos la foto de usuario
                         callback(fotoUsuario)
                     } else {
-                        Log.d("Firebase", "El nombre no está configurado en la base de datos")
+                        Log.d("Firebase", "El foto no está configurado en la base de datos")
                         // Si fuera nulo o estuviera en blanco devolvemos el siguiente mensaje
                         callback("Desconocido")
                     }
@@ -210,7 +210,7 @@ class Perfil : AppCompatActivity() {
                 override fun onCancelled(databaseError: DatabaseError) {
 
                     Log.e("Firebase", "Error al leer el nombre desde la base de datos: ${databaseError.message}")
-                    callback("Error al leer el nombre")
+                    callback("Error al leer la foto")
                 }
             })
         } else {
