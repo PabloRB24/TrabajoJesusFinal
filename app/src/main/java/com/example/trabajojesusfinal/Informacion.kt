@@ -1,9 +1,12 @@
 package com.example.trabajojesusfinal
-
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.google.firebase.auth.FirebaseUser
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.TextView
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
@@ -12,52 +15,138 @@ import com.google.firebase.database.ValueEventListener
 
 class Informacion : AppCompatActivity() {
 
-    private lateinit var database : FirebaseDatabase
-    private lateinit var peliculasRef : DatabaseReference
+    private lateinit var database: FirebaseDatabase
+    private lateinit var peliculasRef: DatabaseReference
+    private lateinit var seriesRef: DatabaseReference
+    private lateinit var botonAtras : Button
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_informacion)
-        var lista : List<Peliculas>
 
+
+        botonAtras = findViewById(R.id.atras)
         database = FirebaseDatabase.getInstance()
         peliculasRef = database.getReference("peliculas-results")
+        seriesRef = database.getReference("peliculas-results")
 
-         obtenerListaNombres {
-             lista = it
+        val nombreImagen = intent.getStringExtra("nombreImagen")
+        val nombrePS = intent.getStringExtra("nombre")
+        val sinopsis = intent.getStringExtra("sinopsis")
 
+        val nombreTextView: TextView = findViewById(R.id.textView8)
+        val sinopsisTextView: TextView = findViewById(R.id.editTextCV)
+        val imagenPeli : ImageView = findViewById(R.id.imagenPeli)
+        val trailer : ImageView = findViewById(R.id.video)
+
+        botonAtras.setOnClickListener {
+            var intent = Intent(this, SeriesPeliculas::class.java)
+            startActivity(intent)
         }
 
-    }
+        intent.putExtra("nombre", "Bruja escarlata y vision")
+        intent.putExtra("nombre", "High School Musical: El musical: La serie")
+        intent.putExtra("nombre", "El Míster")
+        intent.putExtra("nombre", "Loki")
+        intent.putExtra("nombre", "Ojo de Halcón")
+        intent.putExtra("nombre", "¿Qué pasaría si...?")
+        intent.putExtra("nombre", "Star Wars the clone wars")
+        intent.putExtra("nombre", "The Beatles get back")
+        intent.putExtra("nombre", "La milla verde")
+        intent.putExtra("nombre", "Lista schinder")
+        intent.putExtra("nombre", "Parasito")
+        intent.putExtra("nombre", "Pulp fiction")
+        intent.putExtra("nombre", "Radical")
+        intent.putExtra("nombre", "The dark knight")
+        intent.putExtra("nombre", "The shawshank redemption")
+        intent.putExtra("nombre", "Your name")
 
 
-//Terminar
+        trailer.setOnClickListener {
+            var trailerUrl = ""
+            when(nombrePS){
+                "Bruja escarlata y vision"->{
+                   trailerUrl = "https://www.youtube.com/watch?v=sj9J2ecsSpo"
 
+                }
+                "High School Musical: El musical: La serie"->{
+                   trailerUrl = "https://www.youtube.com/watch?v=u_Nvc0LBIfo"
 
-    private fun obtenerListaNombres(callback: (List<Peliculas>) -> Unit) {
+                }
+                "El Míster"->{
+                    trailerUrl = "https://www.youtube.com/watch?v=O8dnmcMgrRU"
 
+                }
+                "Loki"->{
+                    trailerUrl = "https://www.youtube.com/watch?v=uz1CREWyISo"
 
-        peliculasRef.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onDataChange(dataSnapshot: DataSnapshot) {
-                val listaNombres = mutableListOf<Peliculas>()
+                }
+                "Ojo de Halcón"->{
+                    trailerUrl = "https://www.youtube.com/watch?v=JTEMQlEI2g0"
 
-                for (nombreSnapshot in dataSnapshot.children) {
+                }
+                "¿Qué pasaría si...?"->{
+                    trailerUrl = "https://www.youtube.com/watch?v=Q4og7q_BWUU"
 
-                    val nombre = nombreSnapshot.child("name").value as String?
-                    val sinopsis = nombreSnapshot.child("overview").value as String?
+                }
+                "Star Wars the clone wars"->{
+                    trailerUrl = "https://www.youtube.com/watch?v=ZLW2jkd6E7g"
 
-                    if (!nombre.isNullOrEmpty() && !sinopsis.isNullOrEmpty()) {
-                        var pelicula : Peliculas = Peliculas(nombre,sinopsis)
-                        listaNombres.add(pelicula)
-                    }
+                }
+                "The Beatles get back"->{
+                    trailerUrl = "https://www.youtube.com/watch?v=ykw5YDTnOMs"
+
+                }
+                "La milla verde"->{
+                    trailerUrl = "https://www.youtube.com/watch?v=hBtSF4-cnzk"
+
+                }
+                "Lista schinder"->{
+                    trailerUrl = "https://www.youtube.com/watch?v=7q-ETFeMxwI"
+
+                }
+                "Parasito"->{
+                    trailerUrl = "https://www.youtube.com/watch?v=90dWVETAdtI"
+
+                }
+                "Pulp fiction"->{
+                    trailerUrl = "https://www.youtube.com/watch?v=auCgsj0MV-M"
+
+                }
+                "Radical"->{
+                    trailerUrl = "https://www.youtube.com/watch?v=4CpKulS9h88"
+
+                }
+                "The dark knight"->{
+                    trailerUrl = "https://www.youtube.com/watch?v=EXeTwQWrcwY"
+
+                }
+                "The shawshank redemption"->{
+                    trailerUrl = "https://www.youtube.com/watch?v=NmzuHjWmXOc"
+
+                }
+                "Your name"->{
+                    trailerUrl = "https://www.youtube.com/watch?v=qz0TDMd_cB0"
+
                 }
 
-                callback(listaNombres)
-            }
 
-            override fun onCancelled(databaseError: DatabaseError) {
             }
-        })
+            if (trailerUrl.isNotEmpty()) {
+                val intent = Intent(Intent.ACTION_VIEW, Uri.parse(trailerUrl))
+                startActivity(intent)
+
+            }
+        }
+
+        var ruta = resources.getIdentifier(nombreImagen,"drawable",packageName)
+        imagenPeli.setImageResource(ruta)
+
+        nombreTextView.text = nombrePS
+        sinopsisTextView.text = sinopsis
+
     }
 
-}
-data class Peliculas(val nombre : String?, val sinopsis : String?)
+ }
+
+

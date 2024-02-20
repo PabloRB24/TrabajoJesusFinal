@@ -9,11 +9,24 @@
 
 
     <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="328dp"
+        android:layout_height="108dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/disney_plus_logo_bien"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
         android:id="@+id/imagePerfil"
         android:layout_width="72dp"
         android:layout_height="76dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="16dp"
         android:clickable="true"
         android:src="@drawable/ic_launcher_background"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +36,7 @@
         android:id="@+id/series"
         android:layout_width="72dp"
         android:layout_height="76dp"
-        android:layout_marginTop="84dp"
+        android:layout_marginTop="188dp"
         android:layout_marginEnd="272dp"
         android:background="#FF3A92D8"
         android:clickable="true"
@@ -35,13 +48,25 @@
         android:id="@+id/peliculas"
         android:layout_width="72dp"
         android:layout_height="76dp"
-        android:layout_marginTop="84dp"
-        android:layout_marginEnd="148dp"
+        android:layout_marginTop="188dp"
+        android:layout_marginEnd="80dp"
         android:background="#FF3A92D8"
         android:clickable="true"
         android:src="@drawable/claquetazo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pelisT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:text="Peliculas"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toTopOf="@+id/peliculas"
+        app:layout_constraintEnd_toStartOf="@+id/imagePerfil"
+        app:layout_constraintHorizontal_bias="0.892"
+        app:layout_constraintStart_toEndOf="@+id/seriesT" />
 
     <TextView
         android:id="@+id/textView4"
@@ -50,7 +75,7 @@
         android:layout_marginStart="248dp"
         android:layout_marginTop="644dp"
         android:gravity="center"
-        android:text="ABANDONAR"
+        android:text="@string/abandonar"
         android:clickable="true"
         android:textColor="@color/white"
         android:textSize="24sp"
@@ -59,124 +84,15 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <HorizontalScrollView
-        android:id="@+id/carruselSeriesDrama"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.61"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerGeneroPelicula">
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imageSelectorSD"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="20dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/the_bear_serie" />
-
-            <ImageView
-                android:id="@+id/imageSelectorS2D"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="20dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/asesinato_en_el_fin_del_mundo" />
-
-            <ImageView
-                android:id="@+id/imageSelectorS3D"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="20dp"
-                android:clickable="true"
-                android:src="@drawable/desaparecidos_serie" />
-
-            <ImageView
-                android:id="@+id/imageSelectorS4D"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="20dp"
-                android:clickable="true"
-                android:src="@drawable/el_colapso_serie" />
-
-        </LinearLayout>
-    </HorizontalScrollView>
-
-
-    <HorizontalScrollView
-        android:id="@+id/carruselSeriesAccion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginLeft="16dp"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.61"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerGeneroPelicula">
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/imageSelectorSA"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="20dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/el_encargado_serie" />
-
-            <ImageView
-                android:id="@+id/imageSelectorS2A"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="20dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/el_maestro_de_la_evasion_serie" />
-
-            <ImageView
-                android:id="@+id/imageSelectorS3A"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="20dp"
-                android:clickable="true"
-                android:src="@drawable/el_paciente_serie" />
-
-            <ImageView
-                android:id="@+id/imageSelectorS4A"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginRight="20dp"
-                android:clickable="true"
-                android:src="@drawable/the_forsters_serie" />
-
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <HorizontalScrollView
         android:id="@+id/carruselPeliculas1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginRight="16dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.61"
+        app:layout_constraintHorizontal_bias="0.406"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/series">
 
@@ -185,61 +101,77 @@
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/imageSelectorP"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_marginRight="20dp"
-                android:src="@drawable/eldesconocido" />
+                android:scaleType="fitXY"
+                android:clickable="true"
+                android:src="@drawable/lamillaverdepeli" />
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/imageSelectorP2"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_marginRight="20dp"
-                android:src="@drawable/elmenu" />
+                android:clickable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/listaschinderpeli" />
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/imageSelectorP3"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_marginRight="20dp"
-                android:src="@drawable/ladelgadalinearoja" />
+                android:clickable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/parasitospeli" />
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/imageSelectorP4"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_marginRight="20dp"
-                android:src="@drawable/lafavorita" />
+                android:clickable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/pulpfictionpeli" />
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/imageSelectorP5"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_marginRight="20dp"
-                android:src="@drawable/taken" />
+                android:clickable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/radicalpeli" />
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/imageSelectorP6"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_marginRight="20dp"
-                android:src="@drawable/thecreator" />
+                android:clickable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/thedarkknightpeli" />
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/imageSelectorP7"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_marginRight="20dp"
-                android:src="@drawable/themazerunner" />
+                android:clickable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/theshawshankredemptionpeli" />
 
-            <ImageButton
+            <ImageView
                 android:id="@+id/imageSelectorP8"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_marginRight="20dp"
-                android:src="@drawable/undonexcepcional" />
+                android:clickable="true"
+                android:scaleType="fitXY"
+                android:src="@drawable/yournamepeli" />
 
 
         </LinearLayout>
@@ -249,66 +181,24 @@
         android:id="@+id/seriesT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginBottom="12dp"
         android:text="Series"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/series"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/pelisT"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:text="Peliculas"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/peliculas"
-        app:layout_constraintEnd_toStartOf="@+id/imagePerfil"
-        app:layout_constraintHorizontal_bias="0.511"
-        app:layout_constraintStart_toEndOf="@+id/seriesT" />
-
-
-    <Spinner
-        android:id="@+id/spinnerGeneroSerie"
-        android:layout_width="197dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="28dp"
-        android:background="@color/white"
-        android:backgroundTint="@color/azul"
-        android:visibility="visible"
-        android:entries="@array/generos"
-        android:padding="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.074"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/carruselSeries1" />
-
-    <Spinner
-        android:id="@+id/spinnerGeneroPelicula"
-        android:layout_width="197dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="28dp"
-        android:background="@color/white"
-        android:backgroundTint="@color/azul"
-        android:entries="@array/generos"
-        android:visibility="invisible"
-        android:padding="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.074"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/carruselSeries1" />
 
     <HorizontalScrollView
         android:id="@+id/carruselSeries1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="68dp"
-        android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginRight="16dp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.61"
+        app:layout_constraintHorizontal_bias="0.406"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/series">
 
@@ -319,65 +209,75 @@
 
             <ImageView
                 android:id="@+id/imageSelectorS"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_marginRight="20dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/the_bear_serie" />
+                android:clickable="true"
+                android:src="@drawable/brujaescarlatayvisionserie" />
 
             <ImageView
                 android:id="@+id/imageSelectorS2"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_marginRight="20dp"
                 android:scaleType="fitXY"
-                android:src="@drawable/asesinato_en_el_fin_del_mundo" />
+                android:clickable="true"
+                android:src="@drawable/highschoolserie" />
 
             <ImageView
                 android:id="@+id/imageSelectorS3"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_marginRight="20dp"
+                android:scaleType="fitXY"
                 android:clickable="true"
-                android:src="@drawable/desaparecidos_serie" />
+                android:src="@drawable/elmisterserie" />
 
             <ImageView
                 android:id="@+id/imageSelectorS4"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_marginRight="20dp"
+                android:scaleType="fitXY"
                 android:clickable="true"
-                android:src="@drawable/el_colapso_serie" />
+                android:src="@drawable/lokiserie" />
+
             <ImageView
                 android:id="@+id/imageSelectorS5"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_marginRight="20dp"
-                android:src="@drawable/el_encargado_serie" />
+                android:scaleType="fitXY"
+                android:clickable="true"
+                android:src="@drawable/ojodehalconserie" />
 
             <ImageView
                 android:id="@+id/imageSelectorS6"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_marginRight="20dp"
+                android:scaleType="fitXY"
                 android:clickable="true"
-                android:src="@drawable/el_maestro_de_la_evasion_serie" />
+                android:src="@drawable/quepasariasiserie" />
 
             <ImageView
                 android:id="@+id/imageSelectorS7"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_marginRight="20dp"
                 android:clickable="true"
-                android:src="@drawable/el_paciente_serie" />
+                android:scaleType="fitXY"
+                android:src="@drawable/starwarstheclonewarsserie" />
 
             <ImageView
                 android:id="@+id/imageSelectorS8"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
                 android:layout_marginRight="20dp"
                 android:clickable="true"
-                android:src="@drawable/the_forsters_serie" />
+                android:scaleType="fitXY"
+                android:src="@drawable/thebeatlesgetbackserie" />
 
         </LinearLayout>
     </HorizontalScrollView>

@@ -108,7 +108,14 @@ class CrearCuenta : AppCompatActivity() {
 
         continua.setOnClickListener {
             if (correo.text.isNotEmpty() && contra.text.isNotEmpty() && nombre.text.isNotEmpty()) {
-                Log.d("Prueba", "Creado nuevo usuario")
+                if (!correo.text.endsWith("@gmail.com")) {
+                    showAlert("Por favor, ingrese un correo electrónico de Gmail válido.")
+                    return@setOnClickListener
+                }
+                if (!contra.text.contains(Regex("[A-Z]")) || !contra.text.contains(Regex("[a-z]")) || !contra.text.contains(Regex("\\d"))) {
+                    showAlert("La contraseña debe contener al menos una mayúscula, una minúscula y un número.")
+                    return@setOnClickListener
+                }
                 auth.createUserWithEmailAndPassword(
                     correo.text.toString(),
                     contra.text.toString()
@@ -121,7 +128,12 @@ class CrearCuenta : AppCompatActivity() {
                         showAlert("Error creando el usuario")
                     }
                 }
+            }else{
+                showAlert("Por favor, complete todos los campos.")
+                return@setOnClickListener
             }
+
+
         }
 
 
@@ -129,7 +141,6 @@ class CrearCuenta : AppCompatActivity() {
     }
 
     private fun showAlert(mensaje : String){
-        //Log.d(TAG, "Error creando nuevo usuario")
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Error")
         builder.setMessage(mensaje)
@@ -141,7 +152,6 @@ class CrearCuenta : AppCompatActivity() {
     private fun datosUsuario (correo: String, nombre: String, foto: String, contra: String){
         val usuarioActual : FirebaseUser? = auth.currentUser
         if (usuarioActual !=null) {
-            // insertamos los datos del usuario actual en nuestra Base de Datos
             val user = Usuario (correo, nombre, foto, contra)
             usuariosRef.child(usuarioActual.uid).setValue(user)
         } else {

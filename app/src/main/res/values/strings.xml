@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">TrabajoJesusFinal</string>
     <string name="inicia_sesion">Inicia sesión con tu correo electronico</string>
+    <string name="abandonar">ABANDONAR</string>
+    <string name="informacion">INFORMACION</string>
+    <string name="atras">Atras</string>
+    <string name="titulo">Titulo</string>
+    <string name="trailer">Trailer</string>
 
     <string-array name="generos">
         <item name="Romance">Romance</item>

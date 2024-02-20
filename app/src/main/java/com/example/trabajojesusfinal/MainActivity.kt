@@ -64,17 +64,24 @@ class MainActivity : AppCompatActivity() {
 
         continua.setOnClickListener{
             if (email.text.isNotEmpty() && pass.text.isNotEmpty()){
-
-                auth.signInWithEmailAndPassword(email.text.toString(),
+                if (!email.text.endsWith("@gmail.com")) {
+                    showAlert("Por favor, ingrese un correo electrónico de Gmail válido.")
+                    return@setOnClickListener
+                }
+                auth.signInWithEmailAndPassword(
+                    email.text.toString(),
                     pass.text.toString()).addOnCompleteListener {
                     if (it.isSuccessful){
                         val logged = Intent(this, SeriesPeliculas::class.java)
                         logged.putExtra("email",email.text.toString())
                         startActivity(logged)
                     } else {
-                        showAlert()
+                        showAlert("Verifica que los campos introducidos son correctos.")
                     }
                 }
+            }else{
+                showAlert("Por favor, complete todos los campos.")
+                return@setOnClickListener
             }
         }
         crearCuenta.setOnClickListener {
@@ -83,11 +90,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun showAlert(){
-        Log.d(ContentValues.TAG, "Error creando nuevo usuario")
+    private fun showAlert(mensaje : String){
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Error")
-        builder.setMessage("Se ha producido un error en el login de usuario")
+        builder.setMessage(mensaje)
         builder.setPositiveButton("Aceptar",null)
         val dialog: AlertDialog = builder.create()
         dialog.show()

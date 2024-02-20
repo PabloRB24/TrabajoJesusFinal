@@ -72,7 +72,7 @@ class Perfil : AppCompatActivity() {
                 contra.text = con
         }
         obtenerCorreo {correoUsuario ->
-            correo.text = contraseña
+            correo.text = correoUsuario
         }
         obtenerFoto { fotoUsuario->
             var ruta = resources.getIdentifier(fotoUsuario,"drawable",packageName)
@@ -122,14 +122,14 @@ class Perfil : AppCompatActivity() {
 
         if (usuarioActual != null) {
             val uidUsuario = usuarioActual.uid
-            // Leemos a través del dataSnapshot el nombre del usuario actual
+            // Leemos a través del dataSnapshot el correo del usuario actual
             usuariosRef.child(uidUsuario).child("email").addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    // Guardamos el nombre en nombreUsuario tanto si existe o no
+                    // Guardamos el nombre en correoUsuario tanto si existe o no
                     val correoUsuario = dataSnapshot.value as String?
 
-                    if (correoUsuario != null && correoUsuario.isNotEmpty()) {
-                        // Devolvemos el nombre de usuario
+                    if (!correoUsuario.isNullOrEmpty()) {
+                        // Devolvemos el correo de usuario
                         callback(correoUsuario)
                     } else {
                         Log.d("Firebase", "El nombre no está configurado en la base de datos")
@@ -142,7 +142,7 @@ class Perfil : AppCompatActivity() {
                 override fun onCancelled(databaseError: DatabaseError) {
 
                     Log.e("Firebase", "Error al leer el nombre desde la base de datos: ${databaseError.message}")
-                    callback("Error al leer el nombre")
+                    callback("Error al leer el correo")
                 }
             })
         } else {
