@@ -26,7 +26,7 @@
         android:layout_width="374dp"
         android:layout_height="52dp"
         android:layout_marginTop="32dp"
-        android:text="Crear cuenta"
+        android:text="@string/crear_cuenta2"
         android:textColor="@color/white"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -47,6 +47,7 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <ImageView
         android:id="@+id/imageView3"
@@ -83,7 +84,7 @@
         android:layout_marginTop="24dp"
         android:background="#e9ebf0"
         android:ems="10"
-        android:hint="Correo electronico"
+        android:hint="@string/correo_electronico2"
         android:textColorHint="#7f8186"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
@@ -98,7 +99,7 @@
         android:layout_marginTop="20dp"
         android:ems="10"
         android:inputType="text"
-        android:hint="Nombre de usuario"
+        android:hint="@string/nombre_de_usuario2"
         android:background="#e9ebf0"
         android:textColorHint="#7f8186"
         app:layout_constraintEnd_toEndOf="parent"
@@ -115,7 +116,7 @@
         android:layout_marginTop="20dp"
         android:background="#e9ebf0"
         android:ems="10"
-        android:hint="Contraseña"
+        android:hint="@string/contrase_a2"
         android:inputType="textPassword"
         android:textColorHint="#7f8186"
         app:layout_constraintEnd_toEndOf="parent"

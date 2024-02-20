@@ -6,6 +6,15 @@
     <string name="atras">Atras</string>
     <string name="titulo">Titulo</string>
     <string name="trailer">Trailer</string>
+    <string name="continuar">CONTINUAR</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="correo_electronico">Correo electronico</string>
+    <string name="primera_vez_en_disney">¿Primera vez en disney+?</string>
+    <string name="crear_cuenta">CREAR CUENTA</string>
+    <string name="crear_cuenta2">Crear cuenta</string>
+    <string name="correo_electronico2">Correo electronico</string>
+    <string name="nombre_de_usuario2">Nombre de usuario</string>
+    <string name="contrase_a2">Contraseña</string>
 
     <string-array name="generos">
         <item name="Romance">Romance</item>
