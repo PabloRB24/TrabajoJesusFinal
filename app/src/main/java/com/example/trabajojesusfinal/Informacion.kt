@@ -44,24 +44,6 @@ class Informacion : AppCompatActivity() {
             startActivity(intent)
         }
 
-        intent.putExtra("nombre", "Bruja escarlata y vision")
-        intent.putExtra("nombre", "High School Musical: El musical: La serie")
-        intent.putExtra("nombre", "El Míster")
-        intent.putExtra("nombre", "Loki")
-        intent.putExtra("nombre", "Ojo de Halcón")
-        intent.putExtra("nombre", "¿Qué pasaría si...?")
-        intent.putExtra("nombre", "Star Wars the clone wars")
-        intent.putExtra("nombre", "The Beatles get back")
-        intent.putExtra("nombre", "La milla verde")
-        intent.putExtra("nombre", "Lista schinder")
-        intent.putExtra("nombre", "Parasito")
-        intent.putExtra("nombre", "Pulp fiction")
-        intent.putExtra("nombre", "Radical")
-        intent.putExtra("nombre", "The dark knight")
-        intent.putExtra("nombre", "The shawshank redemption")
-        intent.putExtra("nombre", "Your name")
-
-
         trailer.setOnClickListener {
             var trailerUrl = ""
             when(nombrePS){

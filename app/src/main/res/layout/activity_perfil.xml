@@ -38,6 +38,20 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/textView5"
+        android:layout_width="109dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/correo"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.052"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
         android:id="@+id/editTextTextEmailAddress"
         android:layout_width="376dp"
         android:layout_height="60dp"
@@ -88,32 +102,20 @@
         android:layout_marginEnd="20dp"
         app:cornerRadius = "5dp"
         android:backgroundTint="@color/azul"
-        android:text="Atras"
+        android:text="@string/atras2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="109dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="16dp"
-        android:text="Correo:"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.052"
-        app:layout_constraintStart_toStartOf="parent" />
+
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="109dp"
         android:layout_height="30dp"
         android:layout_marginBottom="16dp"
-        android:text="Nombre:"
+        android:text="@string/nombre3"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -127,7 +129,7 @@
         android:layout_width="160dp"
         android:layout_height="30dp"
         android:layout_marginBottom="16dp"
-        android:text="Contraseña:"
+        android:text="@string/contrase_a3"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -145,7 +147,7 @@
         android:layout_marginTop="588dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@color/azul"
-        android:text="Mostrar"
+        android:text="@string/mostrar"
         app:cornerRadius="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

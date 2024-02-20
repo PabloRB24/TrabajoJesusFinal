@@ -17,6 +17,7 @@
         android:src="@drawable/disney_plus_logo_bien"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
+        android:contentDescription="@string/descripcion"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -43,6 +44,7 @@
         android:layout_marginTop="236dp"
         android:layout_marginEnd="80dp"
         android:src="@drawable/among_us_amarillo"
+        android:contentDescription="@string/descripcion"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,13 +53,14 @@
 
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="280dp"
         android:layout_marginEnd="40dp"
-        android:src="@android:drawable/ic_media_ff"
         android:clickable="true"
+        android:contentDescription="@string/descripcion"
+        android:src="@android:drawable/ic_media_ff"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/imageSelector"
@@ -65,12 +68,13 @@
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="280dp"
         android:layout_marginEnd="10dp"
         android:clickable="true"
+        android:contentDescription="@string/descripcion"
         android:src="@android:drawable/ic_media_rew"
         app:layout_constraintEnd_toStartOf="@+id/imageSelector"
         app:layout_constraintHorizontal_bias="0.041"

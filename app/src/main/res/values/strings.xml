@@ -15,6 +15,12 @@
     <string name="correo_electronico2">Correo electronico</string>
     <string name="nombre_de_usuario2">Nombre de usuario</string>
     <string name="contrase_a2">Contraseña</string>
+    <string name="descripcion">descripcion</string>
+    <string name="correo">Correo:</string>
+    <string name="atras2">Atras</string>
+    <string name="mostrar">Mostrar</string>
+    <string name="contrase_a3">Contraseña:</string>
+    <string name="nombre3">Nombre:</string>
 
     <string-array name="generos">
         <item name="Romance">Romance</item>

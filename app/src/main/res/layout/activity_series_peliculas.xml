@@ -14,6 +14,7 @@
         android:layout_height="108dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:contentDescription="@string/descripcion"
         android:layout_marginEnd="16dp"
         android:src="@drawable/disney_plus_logo_bien"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,6 +29,7 @@
         android:layout_marginTop="28dp"
         android:layout_marginEnd="16dp"
         android:clickable="true"
+        android:contentDescription="@string/descripcion"
         android:src="@drawable/ic_launcher_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -39,6 +41,7 @@
         android:layout_marginTop="188dp"
         android:layout_marginEnd="272dp"
         android:background="#FF3A92D8"
+        android:contentDescription="@string/descripcion"
         android:clickable="true"
         android:src="@drawable/play2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -51,6 +54,7 @@
         android:layout_marginTop="188dp"
         android:layout_marginEnd="80dp"
         android:background="#FF3A92D8"
+        android:contentDescription="@string/descripcion"
         android:clickable="true"
         android:src="@drawable/claquetazo"
         app:layout_constraintEnd_toEndOf="parent"
@@ -258,6 +262,7 @@
                 android:layout_height="200dp"
                 android:layout_marginRight="20dp"
                 android:scaleType="fitXY"
+                android:contentDescription="@string/descripcion"
                 android:clickable="true"
                 android:src="@drawable/quepasariasiserie" />
 
@@ -267,6 +272,7 @@
                 android:layout_height="200dp"
                 android:layout_marginRight="20dp"
                 android:clickable="true"
+                android:contentDescription="@string/descripcion"
                 android:scaleType="fitXY"
                 android:src="@drawable/starwarstheclonewarsserie" />
 
@@ -276,6 +282,7 @@
                 android:layout_height="200dp"
                 android:layout_marginRight="20dp"
                 android:clickable="true"
+                android:contentDescription="@string/descripcion"
                 android:scaleType="fitXY"
                 android:src="@drawable/thebeatlesgetbackserie" />
 
